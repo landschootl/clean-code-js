@@ -1,4 +1,4 @@
-# Bonnes-pratiques-js
+# Les bonnes pratiques Javascript
 Formation sur les bonnes pratiques Javascript ✨
 
 ## Informations
