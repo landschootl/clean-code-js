@@ -17,16 +17,16 @@ Il est important de bien nommer les variables et les noms des méthodes. Cela vo
 
 ```
 const list = ['Fred', 'Jacques'];                   ❌
-const list2 = ['baleine', 'singe', 'loup'];         ❌
+const list2 = ['baleine', 'singe', 'loup'];         
 
-function add(name) {                                ❌
+function add(name) {                                
   list2.push(name);
 };
 
 const nameList = ['Fred', 'Jacques'];               ✅
-const petList = ['baleine', 'singe', 'loup'];       ✅
+const petList = ['baleine', 'singe', 'loup'];       
 
-function addPet(name) {                             ✅
+function addPet(name) {                             
   petList.push(name);
 };
 ```
@@ -62,23 +62,56 @@ Utilisez la camelCase lorsque vous nomez vos objets, fonctions et instances. Et 
 
 ```
 const game_map = {};                            ❌
-const alien-spacecraft = {};                    ❌
-function FireAMissile() {};                     ❌
-class player {                                  ❌
+const alien-spacecraft = {};                    
+function FireAMissile() {};                     
+class player {                                  
   constructor(name) {
     this.name = name;
   }
 }
-const player--one = new player('Bob');          ❌
+const player--one = new player('Bob');          
 
 const gameMap = {};                             ✅
-const alienSpacecraft = {};                     ✅
-function fireAMissile() {};                     ✅
-class Player {                                  ✅
+const alienSpacecraft = {};                     
+function fireAMissile() {};                     
+class Player {                                  
   constructor(name) {
     this.name = name;
   }
 }
-const playerOne = new Player('Bob');            ✅
+const playerOne = new Player('Bob');            
 ```
+
+### Utiliser la comparaison d'égalité stricte
+
+
+```
+console.log(0 == 0);                              // true   ❌
+console.log(new String("0") == new String("0"));  // true
+console.log('0' == '0');                          // true
+console.log(0 == new String("0"));                // true
+console.log(0 == '0');                            // true
+console.log(new String("0") == '0');              // true
+
+console.log(0 == 0);                              // true   ✅
+console.log(new String("0") == new String("0"));  // true
+console.log('0' == '0');                          // true
+console.log(0 == new String("0"));                // false
+console.log(0 == '0');                            // false
+console.log(new String("0") == '0');              // false
+```
+
+### ; fin de ligne
+
+### () => {}
+
+### foreach avec index
+
+### filter
+
+### let / const / var
+
+### {} obligatoire pour if - for
+
+### if -> ? : condition ternaire
 
