@@ -32,7 +32,7 @@ function addPet(name) {
 ```
 
 ### Indenter correctement son code
-C'est pareil que pour le nommage des variables et méthodes, l’indentation te permet de structurer ton code pour le rendre plus lisible.
+C'est pareil que pour le nommage des variables et méthodes, l’indentation permet de structurer son code pour le rendre plus lisible.
 
 ```
 if (Platform.OS === 'ios') {                        ❌
@@ -57,8 +57,10 @@ if (Platform.OS === 'ios') {                        ✅
 }
 ```
 
+/**todo : utiliser bien les espaces**/
+
 ### Utiliser le CamelCase et le PascalCase
-Utilisez la camelCase lorsque vous nomez vos objets, fonctions et instances. Et utilisez la PascalCase lorsque vous nommez vos constructeurs ou vos classes
+Utilisez le camelCase lorsque vous nomez vos objets, fonctions et instances. Et utilisez la PascalCase lorsque vous nommez vos constructeurs ou vos classes.
 
 ```
 const game_map = {};                            ❌
@@ -83,25 +85,49 @@ const playerOne = new Player('Bob');
 ```
 
 ### Utiliser la comparaison d'égalité stricte
-
+Bien différencier le == (égalité faible) qui vérifie l’égalité **des valeurs** et le === (égalité stricte) qui vérifie l’égalité **des valeurs et des types**.
+Il est donc préférable de toujours utiliser l'égalité stricte, cela vous obligera à être rigoureux et ça évitera les possibles effets de bord.
 
 ```
-console.log(0 == 0);                              // true   ❌
-console.log(new String("0") == new String("0"));  // true
-console.log('0' == '0');                          // true
-console.log(0 == new String("0"));                // true
-console.log(0 == '0');                            // true
-console.log(new String("0") == '0');              // true
+console.log(0 == 0);                                // true   ❌
+console.log(new String("0") == new String("0"));    // true
+console.log('0' == '0');                            // true
+console.log(0 == new String("0"));                  // true
+console.log(0 == '0');                              // true
+console.log(new String("0") == '0');                // true
 
-console.log(0 == 0);                              // true   ✅
-console.log(new String("0") == new String("0"));  // true
-console.log('0' == '0');                          // true
-console.log(0 == new String("0"));                // false
-console.log(0 == '0');                            // false
-console.log(new String("0") == '0');              // false
+console.log(0 === 0);                               // true   ✅
+console.log(new String("0") === new String("0"));   // true
+console.log('0' === '0');                           // true
+console.log(0 === new String("0"));                 // false
+console.log(0 === '0');                             // false
+console.log(new String("0") === '0');               // false
 ```
 
-### ; fin de ligne
+### N'omettez pas les accolades 
+Même si il est possible de s’en passer dans certains cas il faut les utiliser. Les risques d’erreurs sont trop important pour passer à coté. Et qui sait ? Demain vous devrez peut-être rajouter une ligne dans votre condition et le terrain sera déjà prêt !
+
+```
+if (condition === true)                         ❌
+  console.log('hello');
+
+for (var i = 0; i < 9; i++)                     ❌
+  console.log('hello', i);
+  
+if (condition === true) {                       ✅
+  console.log('hello');
+}
+
+for (var i = 0; i < 9; i++) {                   ✅
+  console.log('hello', i);
+}
+```
+
+### N'omettez pas les points-virgules
+Une caractéristique que de nombreux développeurs nouveaux et amateurs adorent sur JavaScript est le fait que, dans la plupart des cas, les points-virgules (;) sont facultatifs et que le code s'exécute sans eux. Cette fonctionnalité est connue sous le nom d'insertion automatique de point-virgule. Cependant, en utilisant cette fonction n'est pas recommandée et vous devrait inclure tous les points - virgules à cause que cela peut entraîner un comportement inattendu. Les points-virgules sont également essentiels pour une meilleure lisibilité.
+
+### let / const / var
+
 
 ### () => {}
 
@@ -109,9 +135,55 @@ console.log(new String("0") == '0');              // false
 
 ### filter
 
-### let / const / var
-
-### {} obligatoire pour if - for
-
 ### if -> ? : condition ternaire
+```
+// ✓ ok
+var location = env.development ? 'localhost' : 'www.api.com'
+ 
+// ✓ ok
+var location = env.development
+  ? 'localhost'
+  : 'www.api.com'
+ 
+// ✗ avoid
+var location = env.development ?
+  'localhost' :
+  'www.api.com'
+```
+  
+### nommage des fichiers - 
 
+### eviter les consoles.log
+
+### Ne pas laisser du code commenter
+
+```
+if(v){
+   var x = v;
+} else {
+   var x =10;
+}
+
+var x = v || 10;
+```
+
+```
+var lunch = new Array();
+lunch[0]='Dosa';
+lunch[1]='Roti';
+lunch[2]='Rice';
+lunch[3]='what the heck is this?';
+
+var lunch = [
+   'Dosa',
+   'Roti',
+   'Rice',
+   'what the heck is this?'
+];
+```
+
+### Eviter les concatenations de chaine
+```
+const message = 'Hello' + name + '!';     // ✗ avoid
+const message = `Hello ${name} !`;        // ✓ ok
+```
