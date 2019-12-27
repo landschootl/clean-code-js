@@ -168,6 +168,7 @@ TVA = 0.180; // TypeError: Assignement to constant variable
 
 ### Utiliser les conditions ternaire
 Eviter les **if-else** quand ce n'est pas nécessaire. Utiliser des conditions ternaire rend le code plus lisible dans certains cas !
+exemple :  
 
 ```
 var location;                                                   ❌
@@ -178,8 +179,13 @@ if (env.development) {
 }
 
 var location = env.development ? 'localhost' : 'www.api.com';   ✅
- 
-var location = env.development                                  ✅
+```
+
+:warning: Attention, veuillez à respecter la bonne syntaxe :
+```
+var location = env.development ? 'localhost' : 'www.api.com';   👍
+
+var location = env.development                                  👍
   ? 'localhost'
   : 'www.api.com';
   
@@ -187,6 +193,23 @@ var location = env.development ?                                👎
   'localhost' :
   'www.api.com';
 ```
+
+### Utiliser les opérateurs logiques
+Eviter les **if-else** quand ce n'est pas nécessaire. Utiliser des opérateurs logiques rend le code plus lisible dans certains cas !
+exemple :  
+
+```
+if (v) {                      ❌
+   var x = v;
+} else {
+   var x = 10;
+}
+
+var x = v || 10;              ✅
+```
+
+### eviter les consoles.log
+Normalement, ça sert surtout au débogage. En phase de TEST.
 
 ### () => {}
 ```
@@ -214,20 +237,11 @@ if (currentUser) {
   
 ### nommage des fichiers - 
 
-### eviter les consoles.log
+
 
 ### Ne pas laisser du code commenter
 
-### Eviter les *else-if* inutiles
-```
-if(v){
-   var x = v;
-} else {
-   var x =10;
-}
 
-var x = v || 10;
-```
 
 ```
 var lunch = new Array();
