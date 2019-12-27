@@ -124,12 +124,63 @@ for (var i = 0; i < 9; i++) {                   ✅
 ```
 
 ### N'omettez pas les points-virgules
-Une caractéristique que de nombreux développeurs nouveaux et amateurs adorent sur JavaScript est le fait que, dans la plupart des cas, les points-virgules (;) sont facultatifs et que le code s'exécute sans eux. Cette fonctionnalité est connue sous le nom d'insertion automatique de point-virgule. Cependant, en utilisant cette fonction n'est pas recommandée et vous devrait inclure tous les points - virgules à cause que cela peut entraîner un comportement inattendu. Les points-virgules sont également essentiels pour une meilleure lisibilité.
+L’ASI contient certaines règles et exceptions parfois difficiles à retenir qui peuvent provoquer une mauvaise interprétation de notre code.
+Il est plus simple de mettre les points-virgules tout le temps comme ça on n’a pas à se soucier des cas particuliers. Lorsqu’on utilise les points-virgules on ne risque aucune erreur. Si on ne les utilise pas on risque de tomber sur certaines erreurs.
 
-### let / const / var
+```
+const list2 = ['baleine', 'singe', 'loup']          ❌  
 
+function add(name) {                                
+  list2.push(name)
+}
+
+const petList = ['baleine', 'singe', 'loup'];       ✅
+
+function addPet(name) {                             
+  petList.push(name);
+};
+```
+
+### Utiliser *let% à la place de *var*
+**var** et **let** sont tous deux utilisés pour la déclaration de variables en javascript, mais la différence entre eux est que var a une portée de fonction et let est une portée de bloc.
+On peut dire qu'une variable déclarée avec var est définie dans tout le programme par rapport à let.
+```
+for (var i = 0; i < 5; i++) {                         ❌
+    console.log(i)
+}
+console.log(i) // 5
+
+for (let i = 0; i < 5; i++) {                         ✅
+    console.log(i)
+}
+console.log(i) // ReferenceError: i is not defined
+```
+
+:warning:	Si vous avez des variables qui ne changeront jamais dans votre programme, il est préférable d'utilisez le mot clé **const**, comme pour définir la TVA ou la valeur de pi par exemple. A la différence de **let**, une fois la variable **const** définie, elle ne pourra plus être réaffecter, ce qui vous assure qu'elle ne changera jamais lors de l'execution du programme.
+```
+const TVA = 0.18
+console.log(TVA) // 0.18
+
+TVA = 0.180 // TypeError: Assignement to constant variable
+```
 
 ### () => {}
+```
+// bad
+if (currentUser) {
+  function test() {
+    console.log('Nope.');
+  }
+}
+
+// good
+let test;
+if (currentUser) {
+  test = () => {
+    console.log('Yup.');
+  };
+}
+```
 
 ### foreach avec index
 
