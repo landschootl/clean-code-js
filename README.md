@@ -21,14 +21,14 @@ const list2 = ['baleine', 'singe', 'loup'];
 
 function add(name) {                                
   list2.push(name);
-};
+}
 
 const nameList = ['Fred', 'Jacques'];               ✅
 const petList = ['baleine', 'singe', 'loup'];       
 
 function addPet(name) {                             
   petList.push(name);
-};
+}
 ```
 
 ### Indenter correctement son code
@@ -138,30 +138,54 @@ const petList = ['baleine', 'singe', 'loup'];       ✅
 
 function addPet(name) {                             
   petList.push(name);
-};
+}
 ```
 
 ### Utiliser *let% à la place de *var*
 **var** et **let** sont tous deux utilisés pour la déclaration de variables en javascript, mais la différence entre eux est que var a une portée de fonction et let est une portée de bloc.
 On peut dire qu'une variable déclarée avec var est définie dans tout le programme par rapport à let.
+
 ```
 for (var i = 0; i < 5; i++) {                         ❌
-    console.log(i)
+    console.log(i);
 }
-console.log(i) // 5
+console.log(i); // 5
 
 for (let i = 0; i < 5; i++) {                         ✅
-    console.log(i)
+    console.log(i);
 }
-console.log(i) // ReferenceError: i is not defined
+console.log(i); // ReferenceError: i is not defined
 ```
 
 :warning:	Si vous avez des variables qui ne changeront jamais dans votre programme, il est préférable d'utilisez le mot clé **const**, comme pour définir la TVA ou la valeur de pi par exemple. A la différence de **let**, une fois la variable **const** définie, elle ne pourra plus être réaffecter, ce qui vous assure qu'elle ne changera jamais lors de l'execution du programme.
-```
-const TVA = 0.18
-console.log(TVA) // 0.18
 
-TVA = 0.180 // TypeError: Assignement to constant variable
+```
+const TVA = 0.18;
+console.log(TVA); // 0.18
+
+TVA = 0.180; // TypeError: Assignement to constant variable
+```
+
+### Utiliser les conditions ternaire
+Eviter les **if-else** quand ce n'est pas nécessaire. Utiliser des conditions ternaire rend le code plus lisible dans certains cas !
+
+```
+var location;                                                   ❌
+if (env.development) {  
+  location = 'localhost';
+} else {
+  location = 'www.api.com';
+}
+
+var location = env.development ? 'localhost' : 'www.api.com';   ✅
+ 
+var location = env.development                                  ✅
+  ? 'localhost'
+  : 'www.api.com';
+  
+var location = env.development ?                                👎
+  'localhost' :
+  'www.api.com';
 ```
 
 ### () => {}
@@ -186,21 +210,7 @@ if (currentUser) {
 
 ### filter
 
-### if -> ? : condition ternaire
-```
-// ✓ ok
-var location = env.development ? 'localhost' : 'www.api.com'
- 
-// ✓ ok
-var location = env.development
-  ? 'localhost'
-  : 'www.api.com'
- 
-// ✗ avoid
-var location = env.development ?
-  'localhost' :
-  'www.api.com'
-```
+
   
 ### nommage des fichiers - 
 
@@ -208,6 +218,7 @@ var location = env.development ?
 
 ### Ne pas laisser du code commenter
 
+### Eviter les *else-if* inutiles
 ```
 if(v){
    var x = v;
