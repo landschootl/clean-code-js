@@ -141,7 +141,7 @@ function addPet(name) {
 }
 ```
 
-### Utiliser *let% à la place de *var*
+### Utiliser *let* à la place de *var*
 **var** et **let** sont tous deux utilisés pour la déclaration de variables en javascript, mais la différence entre eux est que var a une portée de fonction et let est une portée de bloc.
 On peut dire qu'une variable déclarée avec var est définie dans tout le programme par rapport à let.
 
@@ -209,7 +209,19 @@ var x = v || 10;              ✅
 ```
 
 ### eviter les consoles.log
-Normalement, ça sert surtout au débogage. En phase de TEST.
+Eviter au maximum les "console.log", vous pouvez-vous en servire pour le débogage en phase de développement et de test, mais n'oubliez pas de les supprimer ensuite.
+
+```
+if (animal === undefined) {                         ❌
+    console.log('je passe ici');
+    // code
+}
+
+if (animal === undefined) {                         ✅
+    // code
+}
+
+```
 
 ### () => {}
 ```
