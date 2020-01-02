@@ -170,25 +170,25 @@ Evitez les **if-else** quand ce n'est pas nécessaire. Utiliser des conditions t
 exemple :  
 
 ```
-var location;                                                   ❌
+let location;                                                   ❌
 if (env.development) {  
   location = 'localhost';
 } else {
   location = 'www.api.com';
 }
 
-var location = env.development ? 'localhost' : 'www.api.com';   ✅
+let location = env.development ? 'localhost' : 'www.api.com';   ✅
 ```
 
 :warning: Attention, veuillez à respecter la bonne syntaxe :
 ```
-var location = env.development ? 'localhost' : 'www.api.com';   👍
+let location = env.development ? 'localhost' : 'www.api.com';   👍
 
-var location = env.development                                  👍
+let location = env.development                                  👍
   ? 'localhost'
   : 'www.api.com';
   
-var location = env.development ?                                👎
+let location = env.development ?                                👎
   'localhost' :
   'www.api.com';
 ```
@@ -198,13 +198,14 @@ Evitez les **if-else** quand ce n'est pas nécessaire. Utiliser des opérateurs 
 exemple :  
 
 ```
-if (v) {                      ❌
-   var x = v;
+let x;                        ❌
+if (v) {                      
+   x = v;
 } else {
-   var x = 10;
+   x = 10;
 }
 
-var x = v || 10;              ✅
+let x = v || 10;              ✅
 ```
 
 ### Supprimer les consoles.log
@@ -226,28 +227,35 @@ if (animal === undefined) {                         ✅
 Evitez les concatenations de chaine avec des opérateurs logiques car cela est lourd. Utilisez plutôt ` `` ` quand cela est possible.
 
 ```
-const message = 'Hello' + name + '!';       ❌
+const message = 'Hello' + name + '!';                 ❌
 
-const message = `Hello ${name} !`;          ✅
+const message = `Hello ${name} !`;                    ✅
 ```
 
-### () => {}
-```
-// bad
-if (currentUser) {
-  function test() {
-    console.log('Nope.');
-  }
-}
+### Utiliser les fonctions fléchées
+Une expression de fonction fléchée permet d’avoir une syntaxe plus courte que les expressions de fonction.
 
-// good
-let test;
-if (currentUser) {
-  test = () => {
-    console.log('Yup.');
-  };
-}
 ```
+let total = values.reduce(function (a, b) {             ❌
+  return a + b;
+}, 0);
+
+let total = values.reduce((a, b) => a + b, 0);          ✅
+```
+
+:warning: Les fonctions fléchées ne sont pas totalement identiques aux fonctions classiques.   
+Elles ne gèrent pas les valeurs this, arguments et super (voir programmation Objet). Ces valeurs correspondent à celles de l'objet englobant (scope parent).   
+Exemple :
+
+```
+let f1 = function(){ return this};
+let f2 = () => this;
+
+console.log(f1());    // affiche l'objet
+console.log(f2());    // affiche window
+```
+   
+Les fontions fléchées permettent donc d'éviter dans certaines conditions les créations de variables `let thas = this` inutiles.
 
 ### foreach avec index
 
@@ -264,13 +272,13 @@ if (currentUser) {
 
 
 ```
-var lunch = new Array();
+const lunch = new Array();
 lunch[0]='Dosa';
 lunch[1]='Roti';
 lunch[2]='Rice';
 lunch[3]='what the heck is this?';
 
-var lunch = [
+const lunch = [
    'Dosa',
    'Roti',
    'Rice',
