@@ -248,7 +248,7 @@ Elles ne gèrent pas les valeurs this, arguments et super (voir programmation Ob
 Exemple :
 
 ```
-let f1 = function(){ return this};
+let f1 = function() { return this };
 let f2 = () => this;
 
 console.log(f1());    // affiche l'objet
@@ -258,6 +258,13 @@ console.log(f2());    // affiche window
 Les fontions fléchées permettent donc d'éviter dans certaines conditions les créations de variables `let thas = this` inutiles.
 
 ### foreach avec index
+
+```
+let index = 0;
+let changerColor = () => for (let i = 0; i < 5; i++) {       
+  document.getElementById(`button-${index}`).style.color = 'blue';
+}
+```
 
 ### filter
 
