@@ -1,6 +1,6 @@
-<h1 align="center">Formation sur les bonnes pratiques Javascript ✨</h1>
+<h1 align="center">Clean Code Javascript ✨</h1>
 
-Bienvenue sur cette Formation Javascript dans lequel vous allez decouvrir (ou re-decouvrir) les bonnes pratiques du langage !
+Bienvenue sur cette Formation dans lequel vous allez decouvrir (ou re-decouvrir) des bonnes pratiques qui permettent d'améliorer la qualité d'un code Javascript !
 
 ## Informations
 - **Objectifs** :dart: : Améliorer la qualité d'un code écrit en Javascript !
