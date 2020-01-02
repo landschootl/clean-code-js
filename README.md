@@ -156,8 +156,7 @@ for (let i = 0; i < 5; i++) {                         ✅
 }
 console.log(i); // ReferenceError: i is not defined
 ```
-
-:warning:	Si vous avez des variables qui ne changeront jamais dans votre programme, il est préférable d'utilisez le mot clé **const**, comme pour définir la TVA ou la valeur de pi par exemple. A la différence de **let**, une fois la variable **const** définie, elle ne pourra plus être réaffecter, ce qui vous assure qu'elle ne changera jamais lors de l'execution du programme.
+:information_source:	Si vous avez des variables qui ne changeront jamais dans votre programme, il est préférable d'utilisez le mot clé **const**, comme pour définir la TVA ou la valeur de pi par exemple. A la différence de **let**, une fois la variable **const** définie, elle ne pourra plus être réaffecter, ce qui vous assure qu'elle ne changera jamais lors de l'execution du programme.
 
 ```
 const TVA = 0.18;
@@ -167,7 +166,7 @@ TVA = 0.180; // TypeError: Assignement to constant variable
 ```
 
 ### Utiliser les conditions ternaire
-Eviter les **if-else** quand ce n'est pas nécessaire. Utiliser des conditions ternaire rend le code plus lisible dans certains cas !
+Evitez les **if-else** quand ce n'est pas nécessaire. Utiliser des conditions ternaire rend le code plus lisible dans certains cas !
 exemple :  
 
 ```
@@ -195,7 +194,7 @@ var location = env.development ?                                👎
 ```
 
 ### Utiliser les opérateurs logiques
-Eviter les **if-else** quand ce n'est pas nécessaire. Utiliser des opérateurs logiques rend le code plus lisible dans certains cas !
+Evitez les **if-else** quand ce n'est pas nécessaire. Utiliser des opérateurs logiques rend le code plus lisible dans certains cas !
 exemple :  
 
 ```
@@ -208,8 +207,8 @@ if (v) {                      ❌
 var x = v || 10;              ✅
 ```
 
-### eviter les consoles.log
-Eviter au maximum les "console.log", vous pouvez-vous en servire pour le débogage en phase de développement et de test, mais n'oubliez pas de les supprimer ensuite.
+### Supprimer les consoles.log
+Souvent utilisés pour le débogage en phase de développement et de test, ils ne sont pas supprimés par la suite. Pensez donc à supprimer les *"console.log"* une fois le développement terminé.
 
 ```
 if (animal === undefined) {                         ❌
@@ -221,6 +220,15 @@ if (animal === undefined) {                         ✅
     // code
 }
 
+```
+
+### Eviter les concatenations de chaine
+Evitez les concatenations de chaine avec des opérateurs logiques car cela est lourd. Utilisez plutôt ` `` ` quand cela est possible.
+
+```
+const message = 'Hello' + name + '!';       ❌
+
+const message = `Hello ${name} !`;          ✅
 ```
 
 ### () => {}
@@ -270,8 +278,3 @@ var lunch = [
 ];
 ```
 
-### Eviter les concatenations de chaine
-```
-const message = 'Hello' + name + '!';     // ✗ avoid
-const message = `Hello ${name} !`;        // ✓ ok
-```
