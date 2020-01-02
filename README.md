@@ -2,7 +2,7 @@
 
 Bienvenue sur cette formation dans lequel vous allez decouvrir *(ou re-decouvrir)* des bonnes pratiques qui vont permettre d'améliorer la qualité de vos codes Javascript !
 
-:information_source: Cette formation est compatible pour toutes les versions javascript à partir de **es6** :bangbang:
+:information_source: Cette formation est compatible pour toutes les versions javascript à partir de **es6** !
 
 ## Informations
 - **Objectifs** :dart: : Améliorer la qualité d'un code écrit en Javascript !
@@ -12,7 +12,7 @@ Bienvenue sur cette formation dans lequel vous allez decouvrir *(ou re-decouvrir
 - **Description** :bookmark: : Aujourd'hui de plus en plus de développeurs sont formés et sont amenés à utiliser des frameworks comme Angular, React, Vue ou Node. Cependant, étant directement plongés dans les vagues sujets que peut amener un de ces frameworks, les notions même de javascript qui est à l'ogine de ces outils sont souvents oubliés ou vu trop rapidement !! Le principe de cette formation est donc de revoir ensemble quelques règles de base de ce langage.
 
 ## Formation
-Comme indiqué dans les informations, il y aura une partie théorique et une partie pratique. Pour la partie pratique, il sera nécessaire de cloner le projet sur votre poste de travail ``git clone git@github.com:landschootl/clan-code-js.git``.
+Comme indiqué dans les informations au dessus, il y aura une partie théorique et une partie pratique. Pour la partie pratique, il est nécessaire de cloner le projet sur votre poste de travail ``git clone git@github.com:landschootl/clan-code-js.git``.
 
 ### Tout d'abord, commençons par la théorie !
 
