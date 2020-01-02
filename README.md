@@ -12,7 +12,7 @@ Bienvenue sur cette Formation dans lequel vous allez decouvrir (ou re-decouvrir)
 ## Formation
 Pour chacun des points que nous allons aborder ensemble, il y aura une partie théorique et une partie pratique. Pour la partie pratique, il est nécessaire de cloner le projet sur votre ordinateur ``git clone git@github.com:landschootl/bonnes-pratiques-js.git``.
 
-### Nommer correctement les variables et des méthodes
+### Nommer correctement les variables et les méthodes
 Il est important de bien nommer les variables et les noms des méthodes. Cela vous simplifiera la vie lorsque vous (ou un de vos collègues) devrez relire votre code suite à une évolution à effectuer ou un bug à corriger. Vous payez rarement aux nombres de caractères alors n'hésitez pas !
 
 ```
@@ -31,7 +31,7 @@ function addPet(name) {
 }
 ```
 
-### Indenter correctement son code
+### Indenter correctement le code
 C'est pareil que pour le nommage des variables et méthodes, l’indentation permet de structurer son code pour le rendre plus lisible.
 
 ```
@@ -104,7 +104,7 @@ console.log(0 === '0');                             // false
 console.log(new String("0") === '0');               // false
 ```
 
-### N'omettez pas les accolades 
+### Ne pas oublier les accolades 
 Même si il est possible de s’en passer dans certains cas il faut les utiliser. Les risques d’erreurs sont trop important pour passer à coté. Et qui sait ? Demain vous devrez peut-être rajouter une ligne dans votre condition et le terrain sera déjà prêt !
 
 ```
@@ -123,7 +123,7 @@ for (var i = 0; i < 9; i++) {                   ✅
 }
 ```
 
-### N'omettez pas les points-virgules
+### Ne pas oublier les points-virgules
 L’ASI contient certaines règles et exceptions parfois difficiles à retenir qui peuvent provoquer une mauvaise interprétation de notre code.
 Il est plus simple de mettre les points-virgules tout le temps comme ça on n’a pas à se soucier des cas particuliers. Lorsqu’on utilise les points-virgules on ne risque aucune erreur. Si on ne les utilise pas on risque de tomber sur certaines erreurs.
 
