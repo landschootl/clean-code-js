@@ -1,8 +1,8 @@
 <h1 align="center">Clean Code Javascript ✨</h1>
 
-:wave: Bienvenue sur cette formation dans lequel vous allez decouvrir *(ou re-decouvrir)* des bonnes pratiques qui vont permettre d'améliorer la qualité de vos codes Javascript !
+Bienvenue sur cette formation dans lequel vous allez decouvrir *(ou re-decouvrir)* des bonnes pratiques qui vont permettre d'améliorer la qualité de vos codes Javascript !
 
-:bell: Certains exemples ne fonctionnent pas pour les versions en dessous de **es6** !
+:information_source: Cette formation est compatible pour toutes les versions javascript à partir de **es6** :bangbang:
 
 ## Informations
 - **Objectifs** :dart: : Améliorer la qualité d'un code écrit en Javascript !
@@ -61,7 +61,7 @@ if (Platform.OS === 'ios') {                        ✅
 }
 ```
 
-:information_source: N'oubliez pas que les espaces et les sauts de ligne font également partis de l'indentation !
+:warning: Attention, n'oubliez pas que les espaces et les sauts de ligne font également partis de l'indentation !
 
 #### Utiliser le CamelCase et le PascalCase
 Utilisez le camelCase lorsque vous nomez vos objets, fonctions et instances. Et utilisez la PascalCase lorsque vous nommez vos constructeurs ou vos classes.
