@@ -1,20 +1,22 @@
 <h1 align="center">Clean Code Javascript ✨</h1>
 
-Bienvenue sur cette formation dans lequel vous allez decouvrir (ou re-decouvrir) des bonnes pratiques qui permettent d'améliorer la qualité d'un code Javascript !
+:wave: Bienvenue sur cette formation dans lequel vous allez decouvrir *(ou re-decouvrir)* des bonnes pratiques qui vont permettre d'améliorer la qualité de vos codes Javascript !
 
-:bell: Certains exemples ne fonctionnent pas pour les versions en dessous de es6 !
+:bell: Certains exemples ne fonctionnent pas pour les versions en dessous de **es6** !
 
 ## Informations
 - **Objectifs** :dart: : Améliorer la qualité d'un code écrit en Javascript !
 - **Public** :two_men_holding_hands: : Toutes les personnes qui codent ou qui seront amenés à coder en Javascript
 - **Pré-requis** :heavy_check_mark: : Avoir les notions de base de Javascript
-- **Méthode pédagogique** :game_die: : 50% théorique / 50% pratique + 1 exercice final
+- **Méthode pédagogique** :game_die: : 1 partie théorique + 1 partie pratique !
 - **Description** :bookmark: : Aujourd'hui de plus en plus de développeurs sont formés et sont amenés à utiliser des frameworks comme Angular, React, Vue ou Node. Cependant, étant directement plongés dans les vagues sujets que peut amener un de ces frameworks, les notions même de javascript qui est à l'ogine de ces outils sont souvents oubliés ou vu trop rapidement !! Le principe de cette formation est donc de revoir ensemble quelques règles de base de ce langage.
 
 ## Formation
-Pour chacun des points que nous allons aborder ensemble, il y aura une partie théorique et une partie pratique. Pour la partie pratique, il est nécessaire de cloner le projet sur votre ordinateur ``git clone git@github.com:landschootl/bonnes-pratiques-js.git``.
+Comme indiqué dans les informations, il y aura une partie théorique et une partie pratique. Pour la partie pratique, il sera nécessaire de cloner le projet sur votre poste de travail ``git clone git@github.com:landschootl/clan-code-js.git``.
 
-### Nommer correctement les variables et les méthodes
+### Tout d'abord, commençons par la théorie !
+
+#### Nommer correctement les variables et les méthodes
 Il est important de bien nommer les variables et les noms des méthodes. Cela vous simplifiera la vie lorsque vous (ou un de vos collègues) devrez relire votre code suite à une évolution à effectuer ou un bug à corriger. Vous payez rarement aux nombres de caractères alors n'hésitez pas !
 
 ```
@@ -33,7 +35,7 @@ function addPet(name) {
 }
 ```
 
-### Indenter correctement le code
+#### Indenter correctement le code
 C'est pareil que pour le nommage des variables et méthodes, l’indentation permet de structurer son code pour le rendre plus lisible.
 
 ```
@@ -59,9 +61,9 @@ if (Platform.OS === 'ios') {                        ✅
 }
 ```
 
-/**todo : utiliser bien les espaces**/
+:information_source: N'oubliez pas que les espaces et les sauts de ligne font également partis de l'indentation !
 
-### Utiliser le CamelCase et le PascalCase
+#### Utiliser le CamelCase et le PascalCase
 Utilisez le camelCase lorsque vous nomez vos objets, fonctions et instances. Et utilisez la PascalCase lorsque vous nommez vos constructeurs ou vos classes.
 
 ```
@@ -86,7 +88,7 @@ class Player {
 const playerOne = new Player('Bob');            
 ```
 
-### Utiliser la comparaison d'égalité stricte
+#### Utiliser la comparaison d'égalité stricte
 Bien différencier le == (égalité faible) qui vérifie l’égalité **des valeurs** et le === (égalité stricte) qui vérifie l’égalité **des valeurs et des types**.
 Il est donc préférable de toujours utiliser l'égalité stricte, cela vous obligera à être rigoureux et ça évitera les possibles effets de bord.
 
@@ -106,7 +108,7 @@ console.log(0 === '0');                             // false
 console.log(new String("0") === '0');               // false
 ```
 
-### Ne pas oublier les accolades 
+#### Ne pas oublier les accolades 
 Même si il est possible de s’en passer dans certains cas il faut les utiliser. Les risques d’erreurs sont trop important pour passer à coté. Et qui sait ? Demain vous devrez peut-être rajouter une ligne dans votre condition et le terrain sera déjà prêt !
 
 ```
@@ -125,7 +127,7 @@ for (var i = 0; i < 9; i++) {                   ✅
 }
 ```
 
-### Ne pas oublier les points-virgules
+#### Ne pas oublier les points-virgules
 L’ASI contient certaines règles et exceptions parfois difficiles à retenir qui peuvent provoquer une mauvaise interprétation de notre code.
 Il est plus simple de mettre les points-virgules tout le temps comme ça on n’a pas à se soucier des cas particuliers. Lorsqu’on utilise les points-virgules on ne risque aucune erreur. Si on ne les utilise pas on risque de tomber sur certaines erreurs.
 
@@ -143,7 +145,7 @@ function addPet(name) {
 }
 ```
 
-### Utiliser *let* à la place de *var*
+#### Utiliser *let* à la place de *var*
 **var** et **let** sont tous deux utilisés pour la déclaration de variables en javascript, mais la différence entre eux est que var a une portée de fonction et let est une portée de bloc.
 On peut dire qu'une variable déclarée avec var est définie dans tout le programme par rapport à let.
 
@@ -167,7 +169,7 @@ console.log(TVA); // 0.18
 TVA = 0.180; // TypeError: Assignement to constant variable
 ```
 
-### Utiliser les conditions ternaire
+#### Utiliser les conditions ternaire
 Evitez les **if-else** quand ce n'est pas nécessaire. Utiliser des conditions ternaire rend le code plus lisible dans certains cas !
 exemple :  
 
@@ -195,7 +197,7 @@ let location = env.development ?                                👎
   'www.api.com';
 ```
 
-### Utiliser les opérateurs logiques
+#### Utiliser les opérateurs logiques
 Evitez les **if-else** quand ce n'est pas nécessaire. Utiliser des opérateurs logiques rend le code plus lisible dans certains cas !
 exemple :  
 
@@ -210,7 +212,7 @@ if (v) {
 let x = v || 10;              ✅
 ```
 
-### Supprimer les consoles.log
+#### Supprimer les consoles.log
 Souvent utilisés pour le débogage en phase de développement et de test, ils ne sont pas supprimés par la suite. Pensez donc à supprimer les *"console.log"* une fois le développement terminé.
 
 ```
@@ -225,7 +227,7 @@ if (animal === undefined) {                         ✅
 
 ```
 
-### Eviter les concatenations de chaine
+#### Eviter les concatenations de chaine
 Evitez les concatenations de chaine avec des opérateurs logiques car cela est lourd. Utilisez plutôt ` `` ` quand cela est possible.
 
 ```
@@ -259,7 +261,7 @@ console.log(f2());    // affiche window
    
 Les fontions fléchées permettent donc d'éviter dans certaines conditions les créations de variables `let thas = this` inutiles.
 
-### foreach avec index
+#### foreach avec index
 
 ```
 let index = 0;
@@ -268,15 +270,15 @@ let changerColor = () => for (let i = 0; i < 5; i++) {
 }
 ```
 
-### filter
+#### filter
 
 
   
-### nommage des fichiers - 
+#### nommage des fichiers - 
 
 
 
-### Ne pas laisser du code commenter
+#### Ne pas laisser du code commenter
 
 
 
@@ -294,4 +296,4 @@ const lunch = [
    'what the heck is this?'
 ];
 ```
-
+### Maintenant, place à la pratique !
