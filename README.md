@@ -1,6 +1,8 @@
 <h1 align="center">Clean Code Javascript ✨</h1>
 
-Bienvenue sur cette Formation dans lequel vous allez decouvrir (ou re-decouvrir) des bonnes pratiques qui permettent d'améliorer la qualité d'un code Javascript !
+Bienvenue sur cette formation dans lequel vous allez decouvrir (ou re-decouvrir) des bonnes pratiques qui permettent d'améliorer la qualité d'un code Javascript !
+
+:bell: Certains exemples ne fonctionnent pas pour les versions en dessous de es6 !
 
 ## Informations
 - **Objectifs** :dart: : Améliorer la qualité d'un code écrit en Javascript !
