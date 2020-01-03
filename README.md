@@ -12,9 +12,9 @@ Bienvenue sur cette formation dans lequel vous allez decouvrir *(ou re-decouvrir
 - **Description** :bookmark: : Aujourd'hui de plus en plus de développeurs sont formés et sont amenés à utiliser des frameworks comme Angular, React, Vue ou Node. Cependant, étant directement plongés dans les vagues sujets que peut amener un de ces frameworks, les notions même de javascript qui est à l'ogine de ces outils sont souvents oubliés ou vu trop rapidement !! Le principe de cette formation est donc de revoir ensemble quelques règles de base de ce langage.
 
 ## Formation
-Comme indiqué dans les informations au dessus, il y aura une partie théorique et une partie pratique. Pour la partie pratique, il est nécessaire de cloner le projet sur votre poste de travail ``git clone git@github.com:landschootl/clan-code-js.git``.
+Comme indiqué dans les informations au dessus, il y aura une partie théorique et une partie pratique.
 
-### Tout d'abord, commençons par la théorie !
+### Tout d'abord, commençons par la théorie ! :book:
 
 #### Nommer correctement les variables et les méthodes
 Il est important de bien nommer les variables et les noms des méthodes. Cela vous simplifiera la vie lorsque vous (ou un de vos collègues) devrez relire votre code suite à une évolution à effectuer ou un bug à corriger. Vous payez rarement aux nombres de caractères alors n'hésitez pas !
@@ -339,4 +339,7 @@ if (animal === undefined) {                         ✅
 }
 ```
 
-### Maintenant, place à la pratique !
+### Maintenant, place à la pratique ! :boom:
+
+Pour cette partie, il est nécessaire que tu clones le projet sur ton poste de travail ``git clone git@github.com:landschootl/clan-code-js.git``.
+
