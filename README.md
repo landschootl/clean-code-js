@@ -325,17 +325,17 @@ for (const number in numberArray) {
 
 let sum = numberArray.reduce(((acc, num) => acc + num), 0);             ✅
 ```
-  
-#### nommage des fichiers - 
 
-#### Ne pas laisser du code commenter
-
-#### foreach avec index
+#### Ne pas laisser du code en commentaire
+Un code commenté est un code qui n'est pas utile à l'execution du programme, donc il ne sert à rien de le garder !
 
 ```
-let index = 0;
-let changerColor = () => for (let i = 0; i < 5; i++) {       
-  document.getElementById(`button-${index}`).style.color = 'blue';
+//  if (animal === undefined) {                       ❌
+//    animal = new Animal();
+//  }
+
+if (animal === undefined) {                         ✅
+  animal = new Animal();
 }
 ```
 
