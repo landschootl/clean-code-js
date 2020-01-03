@@ -236,7 +236,7 @@ const message = 'Hello' + name + '!';                 ❌
 const message = `Hello ${name} !`;                    ✅
 ```
 
-### Utiliser les fonctions fléchées
+#### Utiliser les fonctions fléchées
 Une expression de fonction fléchée permet d’avoir une syntaxe plus courte que les expressions de fonction.
 
 ```
@@ -264,7 +264,7 @@ console.log(f2());    // affiche window
 #### Utiliser les filter, map, some, reduce, ... functions
 Arrêtez d'utiliser *`foreach()`* ou *`for (.. in ..)`* et commencez à utiliser des méthodes spécifiques comme *`filtrer()`*, *`map()`*, *`some()`*, *`reduce()`* etc.. Cela est plus propre car il est facile de comprendre le code comme la logique à l'intérieur du boucle. Il vous aide également à suivre la programmation fonctionnelle et à passer à des bibliothèques comme RxJS.
 
-##### filter
+##### *-- filter --*
 La méthode **`filter()`** crée et retourne un nouveau tableau contenant tous les éléments du tableau d'origine qui remplissent une condition déterminée par la fonction callback.
 
 ```
@@ -280,7 +280,7 @@ for (const number in numberArray) {
 let evenNumbers = numberArray.filter(number => number%2 === 0);         ✅
 ```
 
-##### map
+##### *-- map --*
 La méthode **`map()`** crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau appelant.
 
 
@@ -295,7 +295,7 @@ for (const number in numberArray) {
 let squareNumbers = numberArray.map(number => number*number);           ✅
 ```
 
-##### some
+##### *-- some --*
 La méthode **`some()`** teste si au moins un élément du tableau passe le test implémenté par la fonction fournie. Elle renvoie un booléen indiquant le résultat du test.
 
 ```
@@ -312,7 +312,7 @@ for (const number in numberArray) {
 let hasFive = numberArray.some(number => number === 5);                 ✅
 ```
 
-##### reduce
+##### *-- reduce --*
 La méthode **`reduce()`** applique une fonction qui est un « accumulateur » et qui traite chaque valeur d'une liste (de la gauche vers la droite) afin de la réduire à une seule valeur.
 
 ```
