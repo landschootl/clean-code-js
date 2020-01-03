@@ -64,7 +64,7 @@ if (Platform.OS === 'ios') {                        ✅
 :warning: Attention, n'oubliez pas que les espaces et les sauts de ligne font également partis de l'indentation !
 
 #### Utiliser le CamelCase et le PascalCase
-Utilisez le camelCase lorsque vous nomez vos objets, fonctions et instances. Et utilisez la PascalCase lorsque vous nommez vos constructeurs ou vos classes.
+Utilisez le **camelCase** lorsque vous nomez vos objets, fonctions et instances. Et utilisez le **pascalCase** lorsque vous nommez vos constructeurs ou vos classes.
 
 ```
 const game_map = {};                            ❌
@@ -89,7 +89,7 @@ const playerOne = new Player('Bob');
 ```
 
 #### Utiliser la comparaison d'égalité stricte
-Bien différencier le == (égalité faible) qui vérifie l’égalité **des valeurs** et le === (égalité stricte) qui vérifie l’égalité **des valeurs et des types**.
+Bien différencier le `==` (égalité faible) qui vérifie l’égalité **des valeurs** et le `===` (égalité stricte) qui vérifie l’égalité **des valeurs et des types**.
 Il est donc préférable de toujours utiliser l'égalité stricte, cela vous obligera à être rigoureux et ça évitera les possibles effets de bord.
 
 ```
@@ -146,8 +146,8 @@ function addPet(name) {
 ```
 
 #### Utiliser *let* à la place de *var*
-**var** et **let** sont tous deux utilisés pour la déclaration de variables en javascript, mais la différence entre eux est que var a une portée de fonction et let est une portée de bloc.
-On peut dire qu'une variable déclarée avec var est définie dans tout le programme par rapport à let.
+**var** et **let** sont tous deux utilisés pour la déclaration de variables en javascript, mais la différence entre eux est que **var** a une portée de fonction et **let** est une portée de bloc.
+On peut dire qu'une variable déclarée avec **var** est définie dans tout le programme par rapport à **let**.
 
 ```
 for (var i = 0; i < 5; i++) {                         ❌
@@ -170,7 +170,7 @@ TVA = 0.180; // TypeError: Assignement to constant variable
 ```
 
 #### Utiliser les conditions ternaire
-Evitez les **if-else** quand ce n'est pas nécessaire. Utiliser des conditions ternaire rend le code plus lisible dans certains cas !
+Evitez les `if () {} else {}` quand ce n'est pas nécessaire. Utiliser des conditions ternaire rend le code plus lisible dans certains cas !
 exemple :  
 
 ```
@@ -198,7 +198,7 @@ let location = env.development ?                                👎
 ```
 
 #### Utiliser les opérateurs logiques
-Evitez les **if-else** quand ce n'est pas nécessaire. Utiliser des opérateurs logiques rend le code plus lisible dans certains cas !
+Evitez les `if () {} else {}` quand ce n'est pas nécessaire. Utiliser des opérateurs logiques rend le code plus lisible dans certains cas !
 exemple :  
 
 ```
@@ -213,7 +213,7 @@ let x = v || 10;              ✅
 ```
 
 #### Supprimer les consoles.log
-Souvent utilisés pour le débogage en phase de développement et de test, ils ne sont pas supprimés par la suite. Pensez donc à supprimer les *`console.log()`* une fois le développement terminé.
+Souvent utilisés pour le débogage en phase de développement et de test, ils ne sont pas supprimés par la suite. Pensez donc à supprimer les `console.log()` une fois le développement terminé.
 
 ```
 if (animal === undefined) {                         ❌
@@ -262,7 +262,7 @@ console.log(f2());    // affiche window
 :information_source: Les fontions fléchées permettent donc d'éviter dans certaines conditions les créations de variables `let thas = this` inutiles.
 
 #### Utiliser les filter, map, some, reduce, ... functions
-Arrêtez d'utiliser *`foreach()`* ou *`for (.. in ..)`* et commencez à utiliser des méthodes spécifiques comme *`filtrer()`*, *`map()`*, *`some()`*, *`reduce()`* etc.. Cela est plus propre car il est facile de comprendre le code comme la logique à l'intérieur du boucle. Il vous aide également à suivre la programmation fonctionnelle et à passer à des bibliothèques comme RxJS.
+Arrêtez d'utiliser `foreach()` ou `for (.. in ..)` et commencez à utiliser des méthodes spécifiques comme `filtrer()`, `map()`, `some()`, `reduce()` etc.. Cela est plus propre car il est facile de comprendre le code comme la logique à l'intérieur du boucle. Il vous aide également à suivre la programmation fonctionnelle et à passer à des bibliothèques comme RxJS.
 
 ##### *-- filter --*
 La méthode **`filter()`** crée et retourne un nouveau tableau contenant tous les éléments du tableau d'origine qui remplissent une condition déterminée par la fonction callback.
