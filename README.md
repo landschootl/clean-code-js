@@ -259,7 +259,69 @@ console.log(f1());    // affiche l'objet
 console.log(f2());    // affiche window
 ```
    
-Les fontions fléchées permettent donc d'éviter dans certaines conditions les créations de variables `let thas = this` inutiles.
+:information_source: Les fontions fléchées permettent donc d'éviter dans certaines conditions les créations de variables `let thas = this` inutiles.
+
+#### Utiliser les filter, map, some, reduce, ... functions
+
+
+```
+const numberArray = [1,2,3,4,5,6,7,8,9,10];
+
+let evenNumbers = [];                                                   ❌
+for (const number in numberArray) {
+  if (number%2 === 0){
+    evenNumbers.push(number)
+  }
+}
+
+let evenNumbers = numberArray.filter(number => number%2 === 0);         ✅
+```
+
+
+
+```
+const numberArray = [1,2,3,4,5,6,7,8,9,10];
+
+let squareNumbers = [];                                                 ❌
+for (const number in numberArray) {
+  squareNumbers.push(number*number);
+}
+
+let squareNumbers = numberArray.map(number => number*number);           ✅
+```
+
+
+
+```
+const numberArray = [1,2,3,4,5,6,7,8,9,10];
+
+let hasFive = false;                                                    ❌
+for (const number in numberArray) {          
+  if (number === 5) {
+    hasFive = true;
+    break;
+  }
+}
+
+let hasFive = numberArray.some(number => number === 5);                 ✅
+```
+
+
+
+```
+const numberArray = [1,2,3,4,5,6,7,8,9,10];
+
+let sum = 0;                                                            ❌
+for (const number in numberArray) { 
+     sum += number;
+}
+
+let sum = numberArray.reduce(((acc, num) => acc + num), 0);             ✅
+```
+  
+#### nommage des fichiers - 
+
+#### Ne pas laisser du code commenter
 
 #### foreach avec index
 
@@ -270,30 +332,4 @@ let changerColor = () => for (let i = 0; i < 5; i++) {
 }
 ```
 
-#### filter
-
-
-  
-#### nommage des fichiers - 
-
-
-
-#### Ne pas laisser du code commenter
-
-
-
-```
-const lunch = new Array();
-lunch[0]='Dosa';
-lunch[1]='Roti';
-lunch[2]='Rice';
-lunch[3]='what the heck is this?';
-
-const lunch = [
-   'Dosa',
-   'Roti',
-   'Rice',
-   'what the heck is this?'
-];
-```
 ### Maintenant, place à la pratique !
